@@ -1,13 +1,20 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
+const routes = useRoute()
+const router = useRouter()
+const allRoutes = ref(router.getRoutes())
+console.log('🚀 ~ file: App.vue:6 ~ router:', router.getRoutes())
+console.log('🚀 ~ file: App.vue:5 ~ routes:', routes)
 </script>
 
 <template>
   <header>
     <div class="wrapper">
-      <nav class="text-[32px]">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+      <nav class="text-[32px] w-full flex">
+        <RouterLink v-for="item in allRoutes" :key="item.name" :to="item.path" class="block mr-4">{{
+          item.name
+        }}</RouterLink>
       </nav>
     </div>
   </header>

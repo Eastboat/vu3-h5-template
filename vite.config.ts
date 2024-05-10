@@ -8,20 +8,14 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import VueDevTools from 'vite-plugin-vue-devtools'
 
-import VueRouter from 'unplugin-vue-router/vite' // 自动配置生成路由
-
-import { stylePlugin, autoImportPlugin } from './build/vite'
+import { routerPlugin, stylePlugin, autoImportPlugin } from './build/vite'
 
 import legacy from '@vitejs/plugin-legacy'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    VueRouter({
-      extensions: ['.vue'],
-      routesFolder: 'src/pages', // 指定路由文件夹路径
-      dts: 'src/typed-router.d.ts'
-    }),
+    routerPlugin(),
     vue(),
     vueJsx(),
     VueDevTools(),
