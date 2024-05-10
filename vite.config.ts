@@ -8,25 +8,24 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import VueDevTools from 'vite-plugin-vue-devtools'
 
-import { routerPlugin, stylePlugin, autoImportPlugin } from './build/vite'
+import { stylePlugin, autoImportPlugin } from './build/vite'
+// import { routerPlugin } from './build/vite'
 
 import legacy from '@vitejs/plugin-legacy'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    routerPlugin(),
+    // routerPlugin(),
     vue(),
     vueJsx(),
     VueDevTools(),
-
     legacy({
       targets: ['defaults', 'not IE 11']
-    }),
+    }), // 为旧浏览器添加 Polyfill
     // vite plugins
     autoImportPlugin(),
     stylePlugin()
-    // routerPlugin()
   ],
   resolve: {
     alias: {
