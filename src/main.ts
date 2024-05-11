@@ -18,4 +18,12 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 
+// production mock server
+console.log('🚀 ~ file: main.ts:23 ~ process.env.NODE_ENV:', process.env.NODE_ENV)
+if (process.env.NODE_ENV === 'production') {
+  import('./mockProdServer').then(({ setupProdMockServer }) => {
+    setupProdMockServer()
+  })
+}
+
 app.mount('#app')

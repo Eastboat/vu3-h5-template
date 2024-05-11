@@ -1,7 +1,28 @@
 <template>
-  <div></div>
+  <div>
+    <h1>login</h1>
+    <p>{{ responseText }}</p>
+    <br />
+    <p>{{ responseText2 }}</p>
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { createUser, userLogin } from '@/api/mocks/user'
+const responseText = ref(null)
+const responseText2 = ref(null)
+
+onMounted(async () => {
+  try {
+    const res = await createUser()
+    const res2 = await userLogin({ username: 'vben', password: '123456' })
+    console.log('🚀 ~ file: Login.vue:14 ~ onMounted ~ res:', res, res2)
+    responseText.value = res
+    responseText2.value = res2
+  } catch (error) {
+    console.log('🚀 ~ file: Login.vue:15 ~ onMounted ~ error:', error)
+  }
+})
+</script>
 
 <style scoped></style>

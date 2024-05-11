@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "dev": "vite --host --mode=development",
+    "build": "run-p type-check \"build-only {@}\" -- --mode=production",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@unocss/reset": "^0.60.0",
+    "mockjs": "^1.1.0",
     "pinia": "^2.1.7",
     "vant": "^4.9.0",
     "vue": "^3.4.21",
@@ -23,6 +24,7 @@
     "@iconify-json/ant-design": "^1.1.16",
     "@rushstack/eslint-patch": "^1.8.0",
     "@tsconfig/node20": "^20.1.4",
+    "@types/mockjs": "^1.0.10",
     "@types/node": "^20.12.5",
     "@unocss/preset-icons": "^0.60.0",
     "@unocss/preset-mini": "^0.60.0",
@@ -35,6 +37,7 @@
     "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/tsconfig": "^0.5.1",
     "autoprefixer": "^10.4.19",
+    "axios": "^1.6.8",
     "cnjm-postcss-px-to-viewport": "^1.0.1",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
@@ -51,6 +54,7 @@
     "unplugin-vue-components": "^0.27.0",
     "unplugin-vue-router": "^0.8.6",
     "vite": "^5.2.8",
+    "vite-plugin-mock": "^3.0.2",
     "vite-plugin-vue-devtools": "^7.0.25",
     "vue-tsc": "^2.0.11"
   }
