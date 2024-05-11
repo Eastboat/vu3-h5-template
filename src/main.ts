@@ -7,6 +7,9 @@ import './assets/main.css'
 //  unocss
 import 'virtual:uno.css'
 
+// svg icon
+import 'virtual:svg-icons-register'
+
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 

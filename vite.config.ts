@@ -5,7 +5,7 @@ import path from 'path'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import VueDevTools from 'vite-plugin-vue-devtools'
-import { stylePlugin, autoImportPlugin } from './build/vite'
+import { stylePlugin, autoImportPlugin, SvgIconPlugin } from './build/vite'
 // import { routerPlugin } from './build/vite'
 import legacy from '@vitejs/plugin-legacy'
 import { viteMockServe } from 'vite-plugin-mock'
@@ -44,6 +44,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       // vite plugins
       autoImportPlugin(),
       stylePlugin(),
+      SvgIconPlugin(root),
       // https://github.com/vbenjs/vite-plugin-mock/blob/v2.9.1/README.zh_CN.md
       viteMockServe({
         mockPath: 'mock',
