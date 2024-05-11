@@ -23,12 +23,13 @@ import { viteMockServe } from 'vite-plugin-mock'
 const resolve = (dir: string) => {
   return path.join(__dirname, dir)
 }
+
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
   // 根据项目配置。可以配置在.env文件
   const root = process.cwd()
   const env = loadEnv(mode, root)
-  const localEnabled: any = env.VITE_USE_MOCK || true
+  const localEnabled: any = (command === 'serve' && env.VITE_USE_MOCK) || true
   const prodEnabled: any = env.VITE_USE_MOCK || false
   console.log('🚀 ~ file: vite.config.ts:34 ~ defineConfig ~ mode:', command, mode, env)
   return {
@@ -49,15 +50,15 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
         // enable: localEnabled, // 是否启用 mock 功能
         supportTs: true, // 打开后，可以读取 ts 文件模块。 请注意，打开后将无法监视.js 文件。
         watchFiles: true, // 将监视mockPath文件夹中的文件更改。 并实时同步到请求结果
-        localEnabled: command === 'serve' && localEnabled, // 设置是否启用本地 xxx.ts 文件，不要在生产环境中打开它.设置为 false 将禁用 mock 功能
-        prodEnabled: command !== 'serve' && prodEnabled, // 设置是否在生产环境启用 xxx.ts 文件，不要在生产环境中打开它.设置为 false 将禁用 mock 功能
+        localEnabled: localEnabled, // 设置是否启用本地 xxx.ts 文件，不要在生产环境中打开它.设置为 false 将禁用 mock 功能
+        prodEnabled: prodEnabled, // 设置是否在生产环境启用 xxx.ts 文件，不要在生产环境中打开它.设置为 false 将禁用 mock 功能
         logger: true, // 是否在控制台显示请求日志
         // 自动读取模拟.ts 文件时，请忽略指定格式的文件， injectCode代码注入的文件,默认为项目根目录下src/main.{ts,js}
         injectCode: `
-        import { setupProdMockServer } from './src/mockProdServer';
-        setupProdMockServer();
+          import { setupProdMockServer } from './src/mockProdServer';
+          setupProdMockServer();  
         `
-      })
+      } as any)
     ],
     resolve: {
       alias: {

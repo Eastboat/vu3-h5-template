@@ -9,8 +9,8 @@
 
 <script setup lang="ts">
 import { createUser, userLogin } from '@/api/mocks/user'
-const responseText = ref(null)
-const responseText2 = ref(null)
+const responseText = ref<any>(null)
+const responseText2 = ref<any>(null)
 
 onMounted(async () => {
   try {

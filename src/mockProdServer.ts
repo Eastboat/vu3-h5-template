@@ -34,9 +34,7 @@ console.log('🚀 ~ file: mockProdServer.ts:29 ~ Object.keys ~ mockModules:', mo
 
 // import roleMock from '../mock/sys/define'
 // import userMockFn from './mock/sys/user1'
-import userMockFn from '../public/mock/sys/user'
 
 export function setupProdMockServer() {
-  const mockModules = [...userMockFn()]
   createProdMockServer(mockModules)
 }
