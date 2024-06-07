@@ -7,6 +7,11 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Calendar: typeof import('./components/Calendar/Calendar.vue')['default']
+    Calendar2: typeof import('./components/Calendar/Calendar2.vue')['default']
+    Calendar3: typeof import('./components/Calendar/Calendar3.vue')['default']
+    Calendar4: typeof import('./components/Calendar/Calendar4.vue')['default']
+    copy: typeof import('./components/Calendar copy.vue')['default']
     IconCommunity: typeof import('./components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./components/icons/IconDocumentation.vue')['default']
     IconEcosystem: typeof import('./components/icons/IconEcosystem.vue')['default']
@@ -16,6 +21,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     SvgIcon: typeof import('./components/SvgIcon/index.vue')['default']
     TheWelcome: typeof import('./components/TheWelcome.vue')['default']
+    TimeView: typeof import('./components/TimeView.vue')['default']
     VanCell: typeof import('vant/es')['Cell']
     VanCellGroup: typeof import('vant/es')['CellGroup']
     VanCheckbox: typeof import('vant/es')['Checkbox']
