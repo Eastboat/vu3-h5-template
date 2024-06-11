@@ -13,7 +13,7 @@ import { ref } from 'vue'
 // import Calendar from '@/components/Calendar/Calendar.vue' // 切换基础版
 // import Calendar from '@/components/Calendar/Calendar2.vue' //  切换基础版 + 当前日所在周列表
 // import Calendar from '@/components/Calendar/Calendar3.vue' //  切换基础版 + 当前日所在周列表 + taliwind css美化样式
-import Calendar from '@/components/Calendar/Calendar4.vue' //  切换基础版 + 当前日所在周列表 + taliwind css美化样式
+// import Calendar from '@/components/Calendar/Calendar4.vue' //  切换基础版 + 当前日所在周列表 + taliwind css美化样式
 
 const startDate = ref(new Date())
 const switchUnit = ref<'day' | 'week'>('day')
