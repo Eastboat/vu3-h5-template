@@ -1,8 +1,8 @@
 {
-    "*.{js,jsx,vue,ts,tsx}": [
+    "src/**/*.{js,jsx,vue,ts,tsx}": [
         "eslint --fix"
     ],
-    "*.{vue,css,scss}": [
+    "src/**/*.{vue,css,scss}": [
         "eslint --fix"
     ]
 }
