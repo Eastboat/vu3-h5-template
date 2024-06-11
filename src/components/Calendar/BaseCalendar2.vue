@@ -33,7 +33,7 @@ const formattedDate = computed(() => {
 })
 
 const prev = () => {
-  let newDate = undefined
+  let newDate: Date | any
   if (props.switchUnit === 'day') {
     newDate = addDays(props.startDate, -1)
   } else if (props.switchUnit === 'week') {
@@ -43,7 +43,7 @@ const prev = () => {
 }
 
 const next = () => {
-  let newDate = undefined
+  let newDate: Date | any
   if (props.switchUnit === 'day') {
     newDate = addDays(props.startDate, 1)
   } else if (props.switchUnit === 'week') {
