@@ -7,6 +7,10 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    BaseCalendar: typeof import('./components/Calendar/BaseCalendar.vue')['default']
+    BaseCalendar2: typeof import('./components/Calendar/BaseCalendar2.vue')['default']
+    BaseCalendar3: typeof import('./components/Calendar/BaseCalendar3.vue')['default']
+    BaseCalendar4: typeof import('./components/Calendar/BaseCalendar4.vue')['default']
     Calendar: typeof import('./components/Calendar/Calendar.vue')['default']
     Calendar2: typeof import('./components/Calendar/Calendar2.vue')['default']
     Calendar3: typeof import('./components/Calendar/Calendar3.vue')['default']
