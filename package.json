@@ -13,7 +13,8 @@
     "format": "prettier --write src/",
     "lint-staged": "lint-staged",
     "prepare": "husky",
-    "commitlint": "commitlint --edit --verbose"
+    "commitlint": "commitlint --edit --verbose",
+    "commit": "cz"
   },
   "dependencies": {
     "@unocss/reset": "^0.60.0",
@@ -45,6 +46,9 @@
     "autoprefixer": "^10.4.19",
     "axios": "^1.6.8",
     "cnjm-postcss-px-to-viewport": "^1.0.1",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-git": "^1.9.3",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
     "husky": "^9.0.11",
@@ -66,5 +70,10 @@
     "vite-plugin-svg-icons": "^2.0.1",
     "vite-plugin-vue-devtools": "^7.0.25",
     "vue-tsc": "^2.0.11"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   }
 }
