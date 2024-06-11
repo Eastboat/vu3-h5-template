@@ -26,6 +26,11 @@ const router = createRouter({
       path: '/time',
       name: 'Time',
       component: () => import('../views/TimeView.vue')
+    },
+    {
+      path: '/huskyCheck',
+      name: 'Check',
+      component: () => import('../views/CheckView.vue')
     }
   ]
 })
