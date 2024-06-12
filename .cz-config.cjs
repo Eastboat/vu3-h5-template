@@ -1,16 +1,22 @@
+/*
+VSCode 商店安装  Visual Studio Code Commitizen Support  插件
+command + shift + p 输入 conventional commit，就能有 commitizen 的效果
+根目录下创建自定义配置文件 .cz-config.js ，添加对应配置内容信息即可。具体配置见 demo 项目地址（效果如下图所示）
+*/
+
 module.exports = {
   // type 类型
   types: [
-    { value: 'feat', name: '✨ 新增产品功能' },
-    { value: 'fix', name: '🐛 修复 bug' },
-    { value: 'docs', name: '📝 文档的变更' },
+    { value: 'feat', name: '✨ 新增功能' },
+    { value: 'fix', name: '🐛 修复缺陷' },
+    { value: 'docs', name: '📝 文档变更' },
     {
       value: 'style',
-      name: '💄 不改变代码功能的变动(如删除空格、格式化、去掉末尾分号等)'
+      name: '💄 代码格式（不影响功能，例如空格、分号等格式修正）'
     },
     {
       value: 'refactor',
-      name: '♻ 重构代码。不包括 bug 修复、功能新增'
+      name: '♻ 代码重构（不包括 bug 修复、功能新增）'
     },
     {
       value: 'perf',
@@ -19,14 +25,14 @@ module.exports = {
     { value: 'test', name: '✅ 添加、修改测试用例' },
     {
       value: 'build',
-      name: '👷‍ 构建流程、外部依赖变更，比如升级 npm 包、修改 webpack 配置'
+      name: '📦️ 构建流程、外部依赖变更（如升级 npm 包、修改 vite 配置等）'
     },
-    { value: 'ci', name: '🔧 修改了 CI 配置、脚本' },
+    { value: 'ci', name: '🎡 修改 CI 配置、脚本' },
+    { value: 'revert', name: '⏪ 回滚 commit' },
     {
       value: 'chore',
-      name: '对构建过程或辅助工具和库的更改,不影响源文件、测试用例的其他操作'
-    },
-    { value: 'revert', name: '⏪ 回滚 commit' }
+      name: '🔨 对构建过程或辅助工具和库的更改（不影响源文件、测试用例）'
+    }
   ],
 
   // scope 类型，针对 React 项目

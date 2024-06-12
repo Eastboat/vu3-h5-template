@@ -14,9 +14,10 @@
     "lint-staged": "lint-staged",
     "prepare": "husky",
     "commitlint": "commitlint --edit --verbose",
-    "commit": "cz",
+    "commit": "git-cz",
     "prerelease": "standard-version --release-as patch --dry-run",
-    "release": "standard-version  --release-as patch"
+    "release": "standard-version --release-as patch",
+    "postversion": "git push && git push origin --tags"
   },
   "dependencies": {
     "@unocss/reset": "^0.60.0",
@@ -50,6 +51,7 @@
     "cnjm-postcss-px-to-viewport": "^1.0.1",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.0.0",
     "cz-git": "^1.9.3",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
@@ -77,6 +79,9 @@
   "config": {
     "commitizen": {
       "path": "node_modules/cz-git"
+    },
+    "cz-customizable": {
+      "config": ".cz-config.cjs"
     }
   }
 }
