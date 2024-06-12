@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/Eastboat/vu3-h5-template/compare/v0.0.2...v0.0.3) (2024-06-12)
+
 ### [0.0.2](https://github.com/Eastboat/vu3-h5-template/compare/v0.0.1...v0.0.2) (2024-06-11)
 
 ### 0.0.1 (2024-06-11)
