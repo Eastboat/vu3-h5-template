@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>首页：这里测试taliwindcss / unocss / svgicon / rem->px-vw适配</h1>
     <van-cell-group>
       <div class="flex flex-row justify-between">
         <div bg-amber bg="blue-400 hover:blue-500 dark:blue-500 dark:hover:blue-600" text-9>
@@ -15,22 +16,36 @@
       <div bg-amber class="text-9 w-[6px] ml-10 mt-2">1</div>
 
       <div class="w-full mt1 pt20 pb20">
-        <div bg-amber bg="blue-400 hover:blue-500 dark:blue-500 dark:hover:blue-600" class="w-[700]">
+        <div
+          bg-amber
+          bg="blue-400 hover:blue-500 dark:blue-500 dark:hover:blue-600"
+          class="w-[700]"
+        >
           模版搭建
         </div>
         <div bg-amber class="w-[350px]" w-220px>模版搭建</div>
       </div>
-      <p bg-amber bg="blue-400 hover:blue-500 dark:blue-500 dark:hover:blue-600"
-        class="w-[750px] h-[200px] text-center leading-[100px]">
+      <p
+        bg-amber
+        bg="blue-400 hover:blue-500 dark:blue-500 dark:hover:blue-600"
+        class="w-[750px] h-[200px] text-center leading-[100px]"
+      >
         模版搭建
       </p>
       <p clas="w-[170px]" px-10 m-2 bg-amber>模版搭建</p>
 
-      <p px-10 m-2 bg-amber bg="blue-400 hover:blue-500 dark:blue-500 dark:hover:blue-600" class="w-1/2">
+      <p
+        px-10
+        m-2
+        bg-amber
+        bg="blue-400 hover:blue-500 dark:blue-500 dark:hover:blue-600"
+        class="w-1/2"
+      >
         模版搭建
       </p>
     </van-cell-group>
-    <van-checkbox v-model="checked">复选框
+    <van-checkbox v-model="checked"
+      >复选框
       <p class="i-ant-design:account-book-twotone"></p>
       <div class="i- i-ant-design:arrow-left-outlined font-icon-16"></div>
       <div class="i- i-ant-design:arrow-left-outlined font-icon-20"></div>
@@ -40,7 +55,10 @@
       <div class="btn"></div>
       <div class="btn1"></div>
     </van-checkbox>
-
+    <div class="bg-white w-100px">
+      <SvgIcon name="check-in" class="text-40"></SvgIcon>
+      <SvgIcon name="dark" class="text-60"></SvgIcon>
+    </div>
     <van-cell title="单元格" value="内容" />
     <van-cell title="单元格" value="内容" label="描述信息" />
     <van-cell title="单元格" value="内容" label="描述信息" />
@@ -48,6 +66,7 @@
 </template>
 
 <script setup lang="ts">
+import SvgIcon from '@/components/SvgIcon/index.vue'
 const checked = ref(true)
 </script>
 

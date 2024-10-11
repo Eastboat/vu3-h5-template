@@ -1,5 +1,7 @@
 <template>
   <div>
+    <h1>Check页面</h1>
+
     {{ a }}
   </div>
 </template>

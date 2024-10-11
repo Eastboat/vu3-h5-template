@@ -1,19 +1,14 @@
 <template>
   <div>
-    <h1>login</h1>
-    <p>{{ responseText }}</p>
+    <h1>login页面：这里测试mock插件数据</h1>
+    <p class="text-30">{{ responseText }}</p>
     <br />
-    <p>{{ responseText2 }}</p>
-    <div class="bg-white w-100px">
-      <SvgIcon name="check-in"></SvgIcon>
-      <SvgIcon name="dark"></SvgIcon>
-    </div>
+    <p class="text-30">{{ responseText2 }}</p>
   </div>
 </template>
 
 <script setup lang="ts">
 import { createUser, userLogin } from '@/api/mocks/user'
-import SvgIcon from '@/components/SvgIcon/index.vue'
 const responseText = ref<any>(null)
 const responseText2 = ref<any>(null)
 

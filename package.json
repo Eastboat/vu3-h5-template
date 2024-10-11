@@ -1,5 +1,5 @@
 {
-  "name": "zijin-market-ui",
+  "name": "vu3-h5-template",
   "version": "0.0.3",
   "private": true,
   "type": "module",
@@ -23,6 +23,7 @@
     "@unocss/reset": "^0.60.0",
     "date-fns": "^3.6.0",
     "mockjs": "^1.1.0",
+    "nprogress": "^0.2.0",
     "pinia": "^2.1.7",
     "vant": "^4.9.0",
     "vue": "^3.4.21",
@@ -36,6 +37,7 @@
     "@tsconfig/node20": "^20.1.4",
     "@types/mockjs": "^1.0.10",
     "@types/node": "^20.12.5",
+    "@types/nprogress": "^0.2.3",
     "@unocss/preset-icons": "^0.60.0",
     "@unocss/preset-mini": "^0.60.0",
     "@unocss/preset-rem-to-px": "^0.59.4",

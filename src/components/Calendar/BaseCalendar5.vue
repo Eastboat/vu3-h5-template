@@ -1,20 +1,20 @@
 <template>
-  <view class="calendar-container">
-    <view class="nav-buttons">
+  <div class="calendar-container">
+    <div class="nav-buttons">
       <button @click="prev" class="btn">前一天</button>
-      <text class="date">{{ formattedDate }}</text>
+      <div class="date">{{ formattedDate }}</div>
       <button @click="next" class="btn">后一天</button>
-    </view>
-    <view class="week-container">
-      <view v-for="date in currentWeek" :key="date" class="day-item">
-        <text class="day-name">{{ formatDate(date, 'EEEEE') }}</text>
-        <text class="day-date">{{ formatDate(date, 'MM/dd') }}</text>
-      </view>
-    </view>
-  </view>
+    </div>
+    <div class="week-container">
+      <div v-for="(date, index) in currentWeek" :key="index" class="day-item">
+        <div class="day-name">{{ formatDate(date, 'EEEEE') }}</div>
+        <div class="day-date">{{ formatDate(date, 'MM/dd') }}</div>
+      </div>
+    </div>
+  </div>
 </template>
 
-<script>
+<script lang="ts">
 import { format, addDays, addWeeks, startOfWeek, endOfWeek, eachDayOfInterval } from 'date-fns'
 import { zhCN } from 'date-fns/locale'
 
@@ -58,7 +58,7 @@ export default {
       }
       this.$emit('update-date', newDate)
     },
-    formatDate(date, dateFormat) {
+    formatDate(date: Date, dateFormat: string) {
       return format(date, dateFormat, { locale: zhCN })
     }
   },
