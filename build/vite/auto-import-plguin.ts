@@ -3,7 +3,7 @@
  * @Author: eastboat
  * @Date: 2024-05-09 11:28:34
  * @LastEditors: eastboat
- * @LastEditTime: 2024-05-09 15:51:10
+ * @LastEditTime: 2024-10-11 11:50:22
  */
 import Components from 'unplugin-vue-components/vite'
 import { VantResolver } from '@vant/auto-import-resolver'
@@ -36,7 +36,13 @@ export const autoImportPlugin = () => {
         // unheadVueComposablesImports
       ],
       dts: 'src/auto-imports.d.ts',
-      dirs: ['src/composables'] // 指定在 src/composables 文件夹中自动导入可复用的组合式 API。
+      dirs: ['src/composables'], // 指定在 src/composables 文件夹中自动导入可复用的组合式 API。
+      // 解决 unplugin-auto-import/vite 插件和 ESLint 冲突的问题
+      eslintrc: {
+        enabled: true, // 生成eslint配置文件
+        filepath: './.eslintrc-auto-import.json', // 指定文件路径
+        globalsPropValue: true // 设置全局变量为 true
+      }
     })
   ]
 }

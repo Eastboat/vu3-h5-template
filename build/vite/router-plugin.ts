@@ -1,9 +1,9 @@
 /*
- * @Description: 处理路由相关的差距
+ * @Description: 处理路由相关的插件
  * @Author: eastboat
  * @Date: 2024-05-09 11:39:13
  * @LastEditors: eastboat
- * @LastEditTime: 2024-05-10 15:24:09
+ * @LastEditTime: 2024-10-11 10:05:17
  */
 
 import VueRouter from 'unplugin-vue-router/vite' // 自动配置生成路由
