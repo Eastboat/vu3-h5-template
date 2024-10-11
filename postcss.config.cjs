@@ -7,7 +7,7 @@ module.exports = {
     require('cnjm-postcss-px-to-viewport')({
       viewportWidth: 750, // 根据设计稿设定
       minPixelValue: 1, // 最小的转换数值
-      unitPrecision: 2, // 转化精度，转换后保留位数
+      unitPrecision: 4, // 转化精度，转换后保留位数
       propList: ['*'], // 指定转换的css属性的单位，*代表全部css属性的单位都进行转换
       viewportUnit: 'vw', // 指定需要转换成的视窗单位，默认vw
       fontViewportUnit: 'vw', // 指定字体需要转换成的视窗单位，默认vw
