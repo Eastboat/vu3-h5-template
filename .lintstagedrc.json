@@ -2,7 +2,7 @@
     "src/**/*.{js,jsx,vue,ts,tsx}": [
         "eslint --fix"
     ],
-    "src/**/*.{vue,css,scss}": [
+    "src/**/*.{vue}": [
         "eslint --fix"
     ]
 }

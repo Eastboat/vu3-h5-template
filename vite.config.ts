@@ -10,21 +10,14 @@ import { stylePlugin, autoImportPlugin, SvgIconPlugin } from './build/vite'
 import legacy from '@vitejs/plugin-legacy'
 import { viteMockServe } from 'vite-plugin-mock'
 
-// console.log(111, import.meta.url, import.meta.env.MODE, import.meta.env.DEV)
-// 当前工作目录路径
-// const root: string = process.cwd()
-// console.log('🚀 ~ file: vite.config.ts:23 ~ root:', root)
-// const mode = import.meta.env
-// console.log('🚀 ~ file: vite.config.ts:25 ~ mode:', mode)
-// // const env = loadEnv(mode, root, '')
-// const env = loadEnv()
-// console.log('🚀 ~ file: vite.config.ts:30 ~ env:', env)
-// console.log('🚀 ~ file: vite.config.ts:32 ~ import.meta.env.VITE_APP_TITLE:', import.meta.env)
 const resolve = (dir: string) => {
   return path.join(__dirname, dir)
 }
 
-// https://vitejs.dev/config/
+/**
+ * UnoCSS 配置文件
+ * @see https://vitejs.dev/config/
+ */
 export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
   // 根据项目配置。可以配置在.env文件
   const root = process.cwd()
@@ -64,25 +57,30 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))
-        // '@enums': resolve('./src/enums'),
-        // '@components': resolve('./src/components'),
-        // '@store': resolve('./src/store'),
-        // '@pages': resolve('./src/pages')
       },
       extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `
+            @import "./src/styles/_animations.scss";
+            @import "./src/styles/_variables.scss";
+            @import "./src/styles/_mixins.scss";
+            @import "./src/styles/_helpers.scss";
+          `
+        }
+        // postcss: {
+        //   plugins: [
+        //     mobile({
+        //       appSelector: '#app',
+        //       viewportWidth: 375,
+        //       maxDisplayWidth: 580,
+        //       rootContainingBlockSelectorList: ['van-tabbar', 'van-popup']
+        //     })
+        //   ]
+      }
     }
-    // css: {
-    // postcss: {
-    //   plugins: [
-    //     mobile({
-    //       appSelector: '#app',
-    //       viewportWidth: 375,
-    //       maxDisplayWidth: 580,
-    //       rootContainingBlockSelectorList: ['van-tabbar', 'van-popup']
-    //     })
-    //   ]
-    // }
-    // }
     // server: {
     //   host: true,
     //   port: 5173,
